@@ -10,11 +10,11 @@ export default function BorrowSummary() {
   if (isLoading) return <div className="text-center mt-10">Loading...</div>;
 
   return (
-    <div className="max-w-3xl mx-auto mt-10 p-6 text-center border-2 rounded">
+    <div className="max-w-3xl mx-auto mt-10 p-6 text-center border-2 rounded bg-white text-black dark:bg-gray-900 dark:text-white">
       <h1 className="text-xl font-bold mb-4">Borrow Summary</h1>
       <table className="w-full border-collapse">
         <thead>
-          <tr className="bg-gray-100">
+          <tr className="bg-gray-100  dark:bg-gray-800 text-left text-gray-800 dark:text-gray-200">
             <th className="p-2 text-left">Book Title</th>
             <th className="p-2 text-left">ISBN</th>
             <th className="p-2 text-left">Total Quantity Borrowed</th>
