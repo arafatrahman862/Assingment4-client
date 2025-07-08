@@ -44,7 +44,7 @@ export default function Books() {
           }}
           className="max-w-full"
         >
-          <TabsList className="flex gap-2 overflow-x-auto whitespace-nowrap justify-center px-2 py-1">
+          <TabsList className="flex gap-2 overflow-x-auto whitespace-nowrap justify-start px-2 py-1 w-full sm:justify-center">
             {["All", "FICTION", "NON_FICTION", "SCIENCE", "HISTORY", "BIOGRAPHY", "FANTASY"].map(
               (genre) => (
                 <TabsTrigger

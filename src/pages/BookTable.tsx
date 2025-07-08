@@ -59,17 +59,20 @@ export default function BookTable({ books }: BookTableProps) {
                 {book.publishedDate ? new Date(book.publishedDate).toLocaleDateString() : "N/A"}
               </td>
               <td className="px-4 py-2 border space-x-2">
-                <UpdateBookModal bookId={book._id} />
+               <div className="flex flex-col sm:flex-row gap-2 sm:items-center">
+               <UpdateBookModal bookId={book._id} />
                 <Button
                   variant="destructive"
                   onClick={() => handleDelete(book)}
-                  disabled={isLoading}
+                  disabled={isLoading} 
+                  
                 >
                   Delete
                 </Button>
                 <Link to={`/users?bookId=${book._id}`}>
                   <Button>Borrow</Button>
                 </Link>
+               </div>
               </td>
             </tr>
           ))}
