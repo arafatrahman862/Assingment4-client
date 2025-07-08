@@ -15,7 +15,7 @@ import {
 import { useEffect } from "react";
 
 export function DatePicker({
-//   onChange,
+
   defaultValue,
 }: {
   onChange: (e: Date | undefined) => void;
@@ -30,11 +30,7 @@ export function DatePicker({
     }
   }, [defaultValue]);
 
-//   const handleSelect = (e: Date | undefined) => {
-//     console.log("Handle Date Picker clicked");
-//     onChange(e);
-//     setDate(e);
-//   };
+
 
   return (
     <Popover>
