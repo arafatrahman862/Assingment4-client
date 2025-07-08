@@ -84,7 +84,7 @@ export function UpdateBookModal({ bookId }: UpdateBookModalProps) {
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
-        <Button className="w-full" variant="outline">Edit Book</Button>
+        <Button className="" variant="outline">Edit Book</Button>
       </DialogTrigger>
 
       <DialogContent className="sm:max-w-[425px]">

@@ -1,3 +1,6 @@
+
+
+import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { useBorrowBookMutation, useGetBooksQuery } from "@/redux/api/baseApi";
 import { Button } from "@/components/ui/button";
@@ -8,19 +11,27 @@ import BorrowSummary from "./BorrowSummary";
 import type { IBook } from "@/types/book";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
+import { useLocation } from "react-router";
 
 const MySwal = withReactContent(Swal);
 
 export default function BorrowBookForm() {
-  const { register, handleSubmit, reset } = useForm<IBorrow>();
-  const [borrowBook, { isLoading }] = useBorrowBookMutation();
+  const location = useLocation();
+  const params = new URLSearchParams(location.search);
+  const bookIdFromQuery = params.get("bookId") || "";
 
-  const { data: booksData, isLoading: booksLoading } = useGetBooksQuery(undefined);
+  const { register, handleSubmit, reset, setValue } = useForm<IBorrow>();
+
+  const [borrowBook, { isLoading }] = useBorrowBookMutation();
+  const { data: booksData } = useGetBooksQuery(undefined);
   const books: IBook[] = booksData?.books || [];
-  
-  if (booksLoading) {
-    return <div className="text-center mt-10 text-xl">Loading books...</div>;
-  }
+
+
+  useEffect(() => {
+    if (bookIdFromQuery) {
+      setValue("book", bookIdFromQuery);
+    }
+  }, [bookIdFromQuery, setValue]);
 
   const onSubmit = async (data: IBorrow) => {
     try {
