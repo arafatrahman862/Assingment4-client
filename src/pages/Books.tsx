@@ -50,7 +50,7 @@ export default function Books() {
                 <TabsTrigger
                   key={genre}
                   value={genre}
-                  className="hover:bg-amber-100 text-sm sm:text-base px-3 py-1 rounded-md"
+                  className=" text-sm sm:text-base px-3 py-1 rounded-md"
                 >
                   {genre.replace("_", " ")}
                 </TabsTrigger>

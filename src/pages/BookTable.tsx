@@ -35,8 +35,8 @@ export default function BookTable({ books }: BookTableProps) {
 
   return (
     <div className="overflow-x-auto">
-      <table className="min-w-full border text-sm text-left shadow">
-        <thead className="bg-gray-100 text-gray-700">
+      <table className="min-w-full border text-sm text-left shadow bg-white text-black dark:bg-gray-900 dark:text-white transition-colors duration-300">
+        <thead className="bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-200">
           <tr>
             <th className="px-4 py-2 border">Title</th>
             <th className="px-4 py-2 border">Author</th>
@@ -49,7 +49,7 @@ export default function BookTable({ books }: BookTableProps) {
         </thead>
         <tbody>
           {books.map((book) => (
-            <tr key={book._id} className="hover:bg-gray-50">
+            <tr key={book._id} className="hover:bg-gray-50 dark:hover:bg-gray-700">
               <td className="px-4 py-2 border">{book.title}</td>
               <td className="px-4 py-2 border">{book.author}</td>
               <td className="px-4 py-2 border">{book.genre}</td>
