@@ -34,8 +34,8 @@ export default function BookTable({ books }: BookTableProps) {
   };
 
   return (
-    <div className="overflow-x-auto">
-      <table className="min-w-full border text-sm text-left shadow bg-white text-black dark:bg-gray-900 dark:text-white transition-colors duration-300">
+    <div className="overflow-x-auto rounded">
+      <table className="min-w-full border  text-sm text-left shadow bg-white text-black dark:bg-gray-900 dark:text-white transition-colors duration-300">
         <thead className="bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-200">
           <tr>
             <th className="px-4 py-2 border">Title</th>
@@ -65,12 +65,12 @@ export default function BookTable({ books }: BookTableProps) {
                   variant="destructive"
                   onClick={() => handleDelete(book)}
                   disabled={isLoading} 
-                  
+                  className="transition-colors duration-200 hover:bg-red-600 dark:hover:bg-red-500"
                 >
                   Delete
                 </Button>
                 <Link to={`/users?bookId=${book._id}`}>
-                  <Button>Borrow</Button>
+                  <Button className="transition-colors duration-200 hover:bg-blue-600 dark:hover:bg-blue-500">Borrow</Button>
                 </Link>
                </div>
               </td>

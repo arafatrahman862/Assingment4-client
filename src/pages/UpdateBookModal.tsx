@@ -84,7 +84,7 @@ export function UpdateBookModal({ bookId }: UpdateBookModalProps) {
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
-        <Button className="" variant="outline">Edit Book</Button>
+        <Button className="transition-colors duration-200 hover:bg-emerald-500 dark:hover:bg-emerald-400" variant="outline">Edit Book</Button>
       </DialogTrigger>
 
       <DialogContent className="sm:max-w-[425px]">
